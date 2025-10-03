@@ -26,3 +26,5 @@ function findTarget(nums, target){
 }
 let arr = [1,8,3,7,2,5];
 console.log(findTarget(arr, 15));
+
+// with the help of hash mapping
