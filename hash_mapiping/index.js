@@ -48,3 +48,21 @@ console.log(findSum(arr2, 10));
 
 // Problem:
 // Find the element that appears more than n/2 times in an array.
+function countFrequency(nums){
+    let hash = {};
+    let frequency = 0
+    for(let i = 0; i < nums.length; i++){
+       if(!hash[nums[i]]){
+           hash[nums[i]] = 1;
+       }
+       else{
+        frequency++;
+       }
+    }
+    // for(let i = 0 ; i < nums.length; i++){
+      let maxFreq = Math.max(...Object.values(hash));
+      return maxFreq;
+    
+}
+let arr3 = [2, 3, 5, 2, 5, 2, 6, 6];
+console.log(countFrequency(arr3));
