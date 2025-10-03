@@ -72,3 +72,31 @@ function countFrequency(nums){
 }
 let arr3 = [2, 3, 5, 2, 5, 2, 6, 6];
 console.log(countFrequency(arr3));
+
+// ---------------------------------------------------------------------
+// 🔹 5. Contains Duplicate
+
+// Problem:
+// Check if an array contains any duplicates.
+
+function checkDupl(nums){
+    for(let i = 0; i < nums.length; i++){
+        let hash = {};
+        if(!hash[nums[i]]){
+            hash[nums[i]] = 1;
+        }
+        else{
+            hash[nums[i]]++;
+        }
+
+        // for checking duplicates
+        for(let i = 0; i < nums.length; nums++){
+            if(hash[nums[i]] === 2){
+            return true;
+        }
+        }
+    }
+    return false;
+}
+let arr4 = [3,4,5,5,6];
+console.log(checkDupl(arr4));
