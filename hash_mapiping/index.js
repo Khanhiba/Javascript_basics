@@ -80,8 +80,9 @@ console.log(countFrequency(arr3));
 // Check if an array contains any duplicates.
 
 function checkDupl(nums){
+    let hash = {};
+    // first loop
     for(let i = 0; i < nums.length; i++){
-        let hash = {};
         if(!hash[nums[i]]){
             hash[nums[i]] = 1;
         }
@@ -89,14 +90,37 @@ function checkDupl(nums){
             hash[nums[i]]++;
         }
 
-        // for checking duplicates
-        for(let i = 0; i < nums.length; nums++){
-            if(hash[nums[i]] === 2){
+        
+    }
+    // for checking duplicates
+    for(let i = 0; i < nums.length; i++){
+            if(hash[nums[i]] >= 2){
             return true;
         }
         }
-    }
     return false;
 }
 let arr4 = [3,4,5,5,6];
 console.log(checkDupl(arr4));
+
+// -------------------------------------------------------------------------------------------
+// 🔹 6. Intersection of Two Arrays
+
+// Problem:
+// Return the intersection of two arrays (only unique elements).
+function intersection(nums1, nums2){
+    let hash = {};
+    for(let i = 0; i < nums1.length; i++){
+        if(hash[nums1[i]] == undefined){
+            hash[nums1[i]] = true;
+        }
+    }
+    for(let j = 0; j < nums2.length; j++){
+        if(hash[nums2[j]]){
+            return nums2[j];
+        }
+    }
+}
+let arr1 = [1,2,3,4];
+let arr5 = [3,5,6,7];
+console.log(intersection(arr1, arr5))
